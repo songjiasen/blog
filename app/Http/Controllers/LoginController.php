@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Models\User;
 use Illuminate\Http\Request;
 
 /**
@@ -14,13 +15,10 @@ class LoginController extends Controller
 		# code...
 	}
 
-	public function doLogin(Request $request)
+	public function doLogin(Request $request , User $user)
 	{
-        error_log(
-            "------".date("Y-m-d H:i:s")."------\n".print_r($request->all(),1)."\n------".date("Y-m-d H:i:s")."------\n",
-            3,
-            "my.log"
-        );
+        $userinfo = $user->get();
+        errorLog($userinfo);
 	}
 
 }

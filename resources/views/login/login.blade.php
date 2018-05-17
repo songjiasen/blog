@@ -62,7 +62,6 @@
                 data: $('form').serialize(),
                 dataType: "json",
                 success:function(re){
-
                 }
             });
 		});
